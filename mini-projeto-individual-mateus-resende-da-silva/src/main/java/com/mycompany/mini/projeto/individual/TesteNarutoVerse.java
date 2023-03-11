@@ -70,7 +70,7 @@ public class TesteNarutoVerse {
                             + "Qual personagem seria seu sensei?");
                     objetoNaruto.pularLinha();
 
-                    System.out.println("Qual é o seu elemento você escolheria?\n"
+                    System.out.println("Qual é o elemento que você escolheria?\n"
                             + " 1 - Doton (Terra)\n"
                             + " 2 - Fuuton (Ar)\n"
                             + " 3 - Raiton (Relampago)");
@@ -144,7 +144,7 @@ public class TesteNarutoVerse {
 
                     objetoNaruto.pularLinha();
                     System.out.println(
-                            String.format("Sua dupla é %s", objetoNaruto.
+                            String.format("Seu sensei é %s", objetoNaruto.
                                     sortearPersonagem(contador)));
                     break;
 
@@ -245,7 +245,7 @@ public class TesteNarutoVerse {
                     objetoNaruto.pularLinha();
 
                     System.out.println("Quinta pergunta\n"
-                            + "Quall era o maior sonho do protagonista?\n"
+                            + "Qual era o maior sonho do protagonista?\n"
                             + " 1 - Se tornar um Hokage!\n"
                             + " 2 - Se tornar o ninja mais poderoso!\n"
                             + " 3 - Se tornar vendedor de macarrão!\n"

@@ -120,7 +120,7 @@ public class Narutoverse {
     public String sortearPersonagem(Integer contador) {
         String sensei;
         if (contador <= 4) {
-            sensei = "Kakashi Sensei";
+            sensei = "Kakashi Hatake";
         } else if (contador <= 7) {
             sensei = "Naruto Uzumaki";
         } else {
