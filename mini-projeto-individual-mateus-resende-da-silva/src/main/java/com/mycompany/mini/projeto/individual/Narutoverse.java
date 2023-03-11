@@ -8,12 +8,12 @@ import java.util.concurrent.ThreadLocalRandom;
  * @author silvam
  */
 public class Narutoverse {
+
     Scanner leitor = new Scanner(System.in);
 
     PersonagemCriado persN = new PersonagemCriado();
     Hokage hokage = new Hokage();
 
-    
     public void mostrarMensagemInicial() {
 
         System.out.println("Olá! Seja bem vindo(a) ao Narutoverse!\n"
@@ -21,13 +21,11 @@ public class Narutoverse {
                 + "além de testar\nseus conhecimentos sobre essa incrível obra!");
     }
 
-    
     public void criarPersonagem() {
         System.out.println("Mas antes de começarmos\n"
                 + "Crie o seu personagem!");
     }
 
-    
     public void criarHokage() {
         hokage.setNome("Naruto Uzumaki");
         hokage.setAtaque(1200.0);
@@ -35,7 +33,6 @@ public class Narutoverse {
         hokage.setDefesa(1000.0);
     }
 
-    
     public void mostrarMenu() {
 
         System.out.println("""
@@ -57,14 +54,12 @@ public class Narutoverse {
 
     }
 
-    
     public void pularLinha() {
         System.out.println("");
     }
 
-    
     public void verificarMes(Double numeroMesInserido) {
-        
+
         if (numeroMesInserido < 0 || numeroMesInserido > 12) {
             do {
                 System.out.println("Número inserido é inválido! Tente novamente!");
@@ -75,36 +70,33 @@ public class Narutoverse {
             persN.setAtaque(numeroMesInserido);
         }
     }
-    
-    
+
     public void verificarIdade(Double numeroIdadeInserido) {
-        
+
         if (numeroIdadeInserido < 0) {
             do {
                 System.out.println("Número inserido é inválido! Tente novamente!");
                 numeroIdadeInserido = leitor.nextDouble();
             } while (numeroIdadeInserido < 0);
-             persN.setChakra(numeroIdadeInserido);
+            persN.setChakra(numeroIdadeInserido);
         } else {
             persN.setChakra(numeroIdadeInserido);
         }
     }
-    
-    
+
     public void verificarAno(Double numeroAnoInserido) {
-        
+
         if (numeroAnoInserido < 0) {
             do {
                 System.out.println("Número inserido é inválido! Tente novamente!");
                 numeroAnoInserido = leitor.nextDouble();
             } while (numeroAnoInserido < 0);
-             persN.setDefesa(numeroAnoInserido);
+            persN.setDefesa(numeroAnoInserido);
         } else {
             persN.setDefesa(numeroAnoInserido);
         }
     }
 
-    
     public String invocarClone(Double quantidadeChakra) {
         Double clonesFeitos = quantidadeChakra / 550;
         String frase;
@@ -125,7 +117,6 @@ public class Narutoverse {
         return frase;
     }
 
-    
     public String sortearPersonagem(Integer contador) {
         String sensei;
         if (contador <= 4) {
@@ -139,7 +130,6 @@ public class Narutoverse {
         return sensei;
     }
 
-    
     public void calcularPontuacaoQuiz(Integer pontuacao) {
 
         if (pontuacao <= 3) {
@@ -162,7 +152,40 @@ public class Narutoverse {
 
     }
 
-    
+    public void plotarRegraJogo() {
+        System.out.println("""
+                          --------------------------------------------
+                          |      Manual - Desafio de gigantes        |
+                          --------------------------------------------
+                          | O jogo possui o mesmo escopo de um rpg!  |                             
+                          | Você inseriu seus dados no ínicio do pro-|
+                          | grama e o computador gerou um personagem |
+                          | que possui atributos de acordo com o que |
+                          | foi informado!                           |
+                          | O jogo terá 4 rodadas, nas quais o hoka- |
+                          | ge decidirá se vai te atacar ou se defen-|
+                          | der. Em seguida, você deverá fazer a mes-|
+                          | ma escolha!                              |
+                          | Após cada escolha, será mostrado o valor |
+                          | de seu ataque bruto e valor que foi sor- |
+                          | teado no dado multiplicador de poder.    |
+                          | Os valores de ataque final e/ou defesa   |
+                          | final de cada jogador serão comparados   | 
+                          | e o vencedor da rodada será declarado,   | 
+                          | além de ganhar 3 pontos.                 | 
+                          | Em caso de empate, ambos ganham um ponto |
+                          | cada.                                    | 
+                          | Depois da última rodada, será anunciado  |  
+                          | se o jogador conseguiu ou não a vaga na  | 
+                          | elite da aldeia.                         |
+                          | Para passar no teste, você precisa pelo  |
+                          | menos empatar com o hokage.              |
+                          --------------------------------------------
+                          |               BOA SORTE!!!               |
+                          --------------------------------------------
+                           """);
+    }
+
     public void escolhaMaquina(Integer escolhaMaquina) {
 
         if (escolhaMaquina.equals(1)) {
@@ -172,7 +195,6 @@ public class Narutoverse {
         }
     }
 
-    
     public Double gerarMovimentoMaquina(Integer escolhaMaquina) {
 
         if (escolhaMaquina.equals(1)) {
@@ -198,7 +220,6 @@ public class Narutoverse {
         }
     }
 
-    
     public Double gerarMovimentoPersonagem(Integer escolhaPersonagem,
             Double ataque, Double defesa) {
 
@@ -224,7 +245,6 @@ public class Narutoverse {
             return defesaP * multiplicadorDefesa;
         }
     }
-    
 
     public String testeResultado(Double movimentoMaquina, Integer escolhaMaquina,
             Double movimentoPersonagem, Integer escolhaPersonagem) {
@@ -287,7 +307,6 @@ public class Narutoverse {
         return frase;
     }
 
-    
     public void pontuacaoParcial() {
 
         System.out.println(String.format("""
@@ -304,7 +323,6 @@ public class Narutoverse {
 
     }
 
-    
     public void resultadoFinal() {
         System.out.println("Calculando resultado!");
         pularLinha();

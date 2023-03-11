@@ -277,6 +277,8 @@ public class TesteNarutoVerse {
                             + "Lute contra o hokage e descubra se você é digno "
                             + "de fazer parte da elite!");
                     objetoNaruto.pularLinha();
+                    objetoNaruto.plotarRegraJogo();
+                    objetoNaruto.pularLinha();
 
                     for (Integer i = 1; i <= 4; i++) {
 
