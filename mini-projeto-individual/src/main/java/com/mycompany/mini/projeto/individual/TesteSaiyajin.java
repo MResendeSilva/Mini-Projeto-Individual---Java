@@ -101,7 +101,7 @@ public class TesteSaiyajin {
                     escolha = leitor.nextInt();
 
                     switch (escolha) {
-                        case 2:
+                        case 4:
                             pontuacao++;
                             System.out.println("Resposta correta!");
                             break;
@@ -140,6 +140,7 @@ public class TesteSaiyajin {
                             + "4 - Instinto Superior");
 
                     escolha = leitor.nextInt();
+                     calcS.pularLinha();
 
                     switch (escolha) {
                         case 1:
