@@ -7,14 +7,12 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author silvam
  */
-public class TesteNarutoverse {
+public class TesteNarutoVerse {
 
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
 
-        ProjetoNarutoverse objetoNaruto = new ProjetoNarutoverse();
-        PersonagemCriado persCriado = new PersonagemCriado();
-        Hokage hokage = new Hokage();
+        Narutoverse objetoNaruto = new Narutoverse();
 
         Integer escolha;
         objetoNaruto.mostrarMensagemInicial();
@@ -25,13 +23,16 @@ public class TesteNarutoverse {
         objetoNaruto.pularLinha();
 
         System.out.println("Insira seu nome: ");
-        persCriado.setNome(leitor.nextLine());
+        objetoNaruto.persN.setNome(leitor.nextLine());
+
         System.out.println("Insira sua idade: ");
-        persCriado.setChakra(leitor.nextDouble());
+        objetoNaruto.verificarIdade(leitor.nextDouble());
+
         System.out.println("Insira o numero do mês que você nasceu:");
-        persCriado.setAtaque(leitor.nextDouble());
+        objetoNaruto.verificarMes(leitor.nextDouble());
+
         System.out.println("Insira o ano que você nasceu:");
-        persCriado.setDefesa(leitor.nextDouble());
+        objetoNaruto.verificarAno(leitor.nextDouble());
 
         objetoNaruto.pularLinha();
 
@@ -39,9 +40,9 @@ public class TesteNarutoverse {
                 String.format("Nome do seu personagem é: %s\n"
                         + "Seu nivel de chakra é: %.2f\n"
                         + "Seu ataque é: %.2f\n"
-                        + "Sua defesa é: %.2f", persCriado.getNome(),
-                        persCriado.getChakra(), persCriado.getAtaque(),
-                        persCriado.getDefesa()));
+                        + "Sua defesa é: %.2f", objetoNaruto.persN.getNome(),
+                        objetoNaruto.persN.getChakra(), objetoNaruto.persN.getAtaque(),
+                        objetoNaruto.persN.getDefesa()));
         objetoNaruto.pularLinha();
 
         do {
@@ -53,8 +54,11 @@ public class TesteNarutoverse {
                 case 1:
                     System.out.println("Você escolheu opção 1\n"
                             + "Quantos clones você pode fazer?");
+                    objetoNaruto.pularLinha();
+                    
                     System.out.println(
-                            objetoNaruto.invocarClone(persCriado.getChakra()));
+                            objetoNaruto.invocarClone(objetoNaruto.persN.
+                                    getChakra()));
                     objetoNaruto.pularLinha();
                     break;
 
@@ -62,7 +66,7 @@ public class TesteNarutoverse {
                     Integer contador = 0;
 
                     System.out.println("Você escolheu opção 2\n"
-                            + "Qual personagem seria sua dupla no torneio?");
+                            + "Qual personagem seria seu sensei");
                     objetoNaruto.pularLinha();
 
                     System.out.println("Qual é o seu elemento você escolheria?\n"
@@ -88,7 +92,7 @@ public class TesteNarutoverse {
 
                     System.out.println("Qual animal você escolheria para ser"
                             + " seu companheiro?\n"
-                            + " 1 - Um mini pug com usando uma bandana azul\n"
+                            + " 1 - Um mini pug usando uma bandana azul\n"
                             + " 2 - Sapo gigante que possui espada\n"
                             + " 3 - Cobra gigante");
 
@@ -257,14 +261,16 @@ public class TesteNarutoverse {
                 case 4:
                     System.out.println("Seja bem vindo(a) ao desafio de "
                             + "gigantes!\n"
-                            + "O hokage está treinando novos talentos para\n"
-                            + "entrar na elite da aldeia e você foi escolhido!"
-                            + " Lute contra o hokage e descubra se você é capaz "
-                            + "de derrota-lo!");
+                            + "O hokage está procurando novos talentos para "
+                            + "entrar na elite ninja da aldeia e\nvocê foi escolhido "
+                            + "para fazer os testes!\n"
+                            + "Lute contra o hokage e descubra se você é digno "
+                            + "de fazer parte da elite!");
                     objetoNaruto.pularLinha();
 
-                    for (Integer i = 1; i <= 3; i++) {
+                    for (Integer i = 1; i <= 4; i++) {
 
+                        objetoNaruto.pularLinha();
                         System.out.println(
                                 String.format("Round %d", i));
                         objetoNaruto.pularLinha();
@@ -273,19 +279,12 @@ public class TesteNarutoverse {
 
                         Integer escolhaMaquina
                                 = ThreadLocalRandom.current().nextInt(1, 3);
+                        objetoNaruto.escolhaMaquina(escolhaMaquina);
 
                         Double movimentoMaquina
                                 = objetoNaruto.
                                         gerarMovimentoMaquina(escolhaMaquina);
 
-                        switch (escolhaMaquina) {
-                            case 1:
-                                System.out.println("O Hokage vai atacar!");
-                                break;
-                            case 2:
-                                System.out.println("O hokage vai se defender!");
-                                break;
-                        }
                         objetoNaruto.pularLinha();
 
                         System.out.println("O que você faz?\n"
@@ -305,16 +304,27 @@ public class TesteNarutoverse {
                             default:
                                 System.out.println("Opção inválida!");
                         }
+
+                        objetoNaruto.pularLinha();
                         Double movimentoPersonagem
                                 = objetoNaruto.
-                                        gerarMovimentoMaquina(escolhaPersonagem);
+                                        gerarMovimentoPersonagem(escolhaPersonagem,
+                                                objetoNaruto.persN.getAtaque(),
+                                                objetoNaruto.persN.getDefesa());
 
                         System.out.println(
                                 objetoNaruto.
                                         testeResultado(movimentoMaquina,
-                                                movimentoPersonagem));
-                    }
+                                                escolhaMaquina,
+                                                movimentoPersonagem,
+                                                escolhaPersonagem));
 
+                        objetoNaruto.pontuacaoParcial();
+
+                        if (i.equals(4)) {
+                            objetoNaruto.resultadoFinal();
+                        }
+                    }
                     break;
 
                 case 0:

@@ -14,6 +14,8 @@ public abstract class Personagem {
     protected Double chakra;
     protected Double ataque;
     protected Double defesa;
+    protected Integer pontuacao = 0;
+
 
     public abstract String getNome();
 
@@ -30,4 +32,6 @@ public abstract class Personagem {
     public abstract Double getDefesa();
 
     public abstract void setDefesa(Double defesa);
+
+    
 }

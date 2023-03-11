@@ -4,7 +4,7 @@ package com.mycompany.mini.projeto.individual;
  *
  * @author silvam
  */
-public class PersonagemCriado extends Personagem{
+public class PersonagemCriado extends Personagem {
 
     public String getNome() {
         return nome;
@@ -27,7 +27,13 @@ public class PersonagemCriado extends Personagem{
     }
 
     public void setAtaque(Double ataque) {
-        this.ataque = ataque * 30;
+        if (ataque <= 4) {
+            this.ataque = ataque * 200;
+        } else if (ataque <= 9) {
+            this.ataque = ataque * 100;
+        } else {
+            this.ataque = ataque * 70;
+        }
     }
 
     public Double getDefesa() {
@@ -38,4 +44,11 @@ public class PersonagemCriado extends Personagem{
         this.defesa = defesa * 0.8;
     }
 
+    public Integer getPontuacao() {
+        return this.pontuacao;
+    }
+
+    public void setPontuacao(Integer pontuacao) {
+        this.pontuacao += pontuacao;
+    }
 }

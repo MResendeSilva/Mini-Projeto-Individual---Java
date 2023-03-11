@@ -4,7 +4,7 @@ package com.mycompany.mini.projeto.individual;
  *
  * @author silvam
  */
-public class Hokage extends Personagem{
+public class Hokage extends Personagem {
 
     public String getNome() {
         return nome;
@@ -36,6 +36,14 @@ public class Hokage extends Personagem{
 
     public void setDefesa(Double defesa) {
         this.defesa = defesa;
+    }
+
+    public Integer getPontuacao() {
+        return this.pontuacao;
+    }
+
+    public void setPontuacao(Integer pontuacao) {
+        this.pontuacao += pontuacao;
     }
 
 }
