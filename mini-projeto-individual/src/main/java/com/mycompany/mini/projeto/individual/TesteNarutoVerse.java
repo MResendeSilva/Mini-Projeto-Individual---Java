@@ -55,7 +55,7 @@ public class TesteNarutoVerse {
                     System.out.println("Você escolheu opção 1\n"
                             + "Quantos clones você pode fazer?");
                     objetoNaruto.pularLinha();
-                    
+
                     System.out.println(
                             objetoNaruto.invocarClone(objetoNaruto.persN.
                                     getChakra()));
@@ -64,9 +64,10 @@ public class TesteNarutoVerse {
 
                 case 2:
                     Integer contador = 0;
+                    Integer opcao = 0;
 
                     System.out.println("Você escolheu opção 2\n"
-                            + "Qual personagem seria seu sensei");
+                            + "Qual personagem seria seu sensei?");
                     objetoNaruto.pularLinha();
 
                     System.out.println("Qual é o seu elemento você escolheria?\n"
@@ -74,21 +75,24 @@ public class TesteNarutoVerse {
                             + " 2 - Fuuton (Ar)\n"
                             + " 3 - Raiton (Relampago)");
 
-                    Integer opcao = leitor.nextInt();
-
-                    switch (opcao) {
-                        case 1:
-                            contador++;
-                            break;
-                        case 2:
-                            contador += 2;
-                            break;
-                        case 3:
-                            contador += 3;
-                            break;
-                        default:
-                            System.out.println("Opção inválida");
-                    }
+                    do {
+                        opcao = leitor.nextInt();
+                        switch (opcao) {
+                            case 1:
+                                contador++;
+                                break;
+                            case 2:
+                                contador += 2;
+                                break;
+                            case 3:
+                                contador += 3;
+                                break;
+                            default:
+                                System.out.println("Opção inválida! "
+                                    + "Tente novamente!");
+                        }
+                    } while (opcao < 1 || opcao > 3);
+                    objetoNaruto.pularLinha();
 
                     System.out.println("Qual animal você escolheria para ser"
                             + " seu companheiro?\n"
@@ -96,43 +100,49 @@ public class TesteNarutoVerse {
                             + " 2 - Sapo gigante que possui espada\n"
                             + " 3 - Cobra gigante");
 
-                    opcao = leitor.nextInt();
-
-                    switch (opcao) {
-                        case 1:
-                            contador++;
-                            break;
-                        case 2:
-                            contador += 2;
-                            break;
-                        case 3:
-                            contador += 3;
-                            break;
-                        default:
-                            System.out.println("Opção inválida");
-                    }
+                    do {
+                        opcao = leitor.nextInt();
+                        switch (opcao) {
+                            case 1:
+                                contador++;
+                                break;
+                            case 2:
+                                contador += 2;
+                                break;
+                            case 3:
+                                contador += 3;
+                                break;
+                            default:
+                                System.out.println("Opção inválida! "
+                                    + "Tente novamente!");
+                        }
+                    } while (opcao < 1 || opcao > 3);
+                    objetoNaruto.pularLinha();
 
                     System.out.println("O que você prefere?\n"
                             + " 1 - Ser extramamente companheiro\n"
                             + " 2 - Ser amado por todos\n"
                             + " 3 - Ser temido por todos");
 
-                    opcao = leitor.nextInt();
+                    do {
+                        opcao = leitor.nextInt();
+                        switch (opcao) {
+                            case 1:
+                                contador++;
+                                break;
+                            case 2:
+                                contador += 2;
+                                break;
+                            case 3:
+                                contador += 3;
+                                break;
+                            default:
+                                System.out.println("Opção inválida! "
+                                    + "Tente novamente!");
+                        }
+                    } while (opcao < 1 || opcao > 3);
 
-                    switch (opcao) {
-                        case 1:
-                            contador++;
-                            break;
-                        case 2:
-                            contador += 2;
-                            break;
-                        case 3:
-                            contador += 3;
-                            break;
-                        default:
-                            System.out.println("Opção inválida");
-                    }
-                    System.out.println(contador);
+                    objetoNaruto.pularLinha();
                     System.out.println(
                             String.format("Sua dupla é %s", objetoNaruto.
                                     sortearPersonagem(contador)));

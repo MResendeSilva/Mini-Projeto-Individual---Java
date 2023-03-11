@@ -241,11 +241,11 @@ public class Narutoverse {
             } else if (parcial < 0) {
                 hokage.setPontuacao(0);
                 persN.setPontuacao(3);
-                frase = "Você venceu a rodada";
+                frase = "Você venceu a rodada!";
             } else {
                 hokage.setPontuacao(1);
                 persN.setPontuacao(1);
-                frase = "A rodada empatou";
+                frase = "A rodada empatou!";
             }
         } else if (escolhaMaquina.equals(2) && escolhaPersonagem.equals(1)) {
             parcial = movimentoPersonagem - movimentoMaquina;
@@ -257,11 +257,11 @@ public class Narutoverse {
             } else if (parcial > 0) {
                 hokage.setPontuacao(0);
                 persN.setPontuacao(3);
-                frase = "Você venceu a rodada";
+                frase = "Você venceu a rodada!";
             } else {
                 hokage.setPontuacao(1);
                 persN.setPontuacao(1);
-                frase = "A rodada empatou";
+                frase = "A rodada empatou!";
             }
         } else if (escolhaMaquina.equals(1) && escolhaPersonagem.equals(1)) {
             parcial = movimentoPersonagem - movimentoMaquina;
@@ -273,11 +273,11 @@ public class Narutoverse {
             } else if (parcial > 0) {
                 hokage.setPontuacao(0);
                 persN.setPontuacao(3);
-                frase = "Você venceu a rodada";
+                frase = "Você venceu a rodada!";
             } else {
                 hokage.setPontuacao(1);
                 persN.setPontuacao(1);
-                frase = "A rodada empatou";
+                frase = "A rodada empatou!";
             }
         } else {
             frase = "Ninguém ganhou ponto! Os dois defenderam!";
@@ -306,6 +306,8 @@ public class Narutoverse {
 
     
     public void resultadoFinal() {
+        System.out.println("Calculando resultado!");
+        pularLinha();
 
         System.out.println((String.format("""
                            
