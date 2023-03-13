@@ -280,7 +280,7 @@ public class TesteNarutoVerse {
                     objetoNaruto.plotarRegraJogo();
                     objetoNaruto.pularLinha();
 
-                    for (Integer i = 1; i <= 4; i++) {
+                    for (Integer i = 1; i <= 5; i++) {
 
                         objetoNaruto.pularLinha();
                         System.out.println(
@@ -331,12 +331,9 @@ public class TesteNarutoVerse {
                                                 movimentoPersonagem,
                                                 escolhaPersonagem));
 
-                        objetoNaruto.pontuacaoParcial();
-
-                        if (i.equals(4)) {
-                            objetoNaruto.resultadoFinal();
-                        }
+                        objetoNaruto.pontuacaoParcial();                
                     }
+                    objetoNaruto.resultadoFinal();
                     break;
 
                 case 0:

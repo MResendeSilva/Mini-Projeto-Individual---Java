@@ -162,13 +162,14 @@ public class Narutoverse {
                           | grama e o computador gerou um personagem |
                           | que possui atributos de acordo com o que |
                           | foi informado!                           |
-                          | O jogo terá 4 rodadas, nas quais o hoka- |
+                          | O jogo terá 5 rodadas, nas quais o hoka- |
                           | ge decidirá se vai te atacar ou se defen-|
                           | der. Em seguida, você deverá fazer a mes-|
                           | ma escolha!                              |
                           | Após cada escolha, será mostrado o valor |
-                          | de seu ataque bruto e valor que foi sor- |
-                          | teado no dado multiplicador de poder.    |
+                          | de seu ataque bruto ou de sua defesa bru-|
+                          | ta, e valor que foi sorteado no dado mul-|
+                          | tiplicador de poder.                     |
                           | Os valores de ataque final e/ou defesa   |
                           | final de cada jogador serão comparados   | 
                           | e o vencedor da rodada será declarado,   | 
